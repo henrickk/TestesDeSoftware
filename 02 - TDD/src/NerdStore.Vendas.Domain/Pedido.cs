@@ -38,6 +38,12 @@ public class Pedido
         return _pedidoItems.Any(p => p.ProdutoId == item.ProdutoId);
     }
 
+
+    private void ValidarPedidoItemInexistente(PedidoItem item)
+    {
+        if (!PedidoItemExistente(item)) throw new DomainException("O item não pertence ao pedido");
+    }
+
     private void ValidarQuantidadeItemPermitida(PedidoItem item)
     {
         var quantidaeItens = item.Quantidade;
@@ -52,12 +58,11 @@ public class Pedido
 
     public void AdicionarItem(PedidoItem pedidoItem)
     {
-
         ValidarQuantidadeItemPermitida(pedidoItem);
 
         if (PedidoItemExistente(pedidoItem))
         {
-            var itemExistente = _pedidoItems.First(p => p.ProdutoId == pedidoItem.ProdutoId);
+            var itemExistente = _pedidoItems.FirstOrDefault(p => p.ProdutoId == pedidoItem.ProdutoId);
 
             itemExistente.AdicionarUnidades(pedidoItem.Quantidade);
             pedidoItem = itemExistente;
@@ -65,6 +70,28 @@ public class Pedido
         }
 
         _pedidoItems.Add(pedidoItem);
+        CalcularValorPedido();
+    }
+
+    public void AtualizarItem(PedidoItem pedidoItem)
+    {
+        ValidarPedidoItemInexistente(pedidoItem);
+        ValidarQuantidadeItemPermitida(pedidoItem);
+
+        var itemExistente = PedidoItems.FirstOrDefault(p => p.ProdutoId == pedidoItem.ProdutoId);
+
+        _pedidoItems.Remove(itemExistente);
+        _pedidoItems.Add(pedidoItem);
+
+        CalcularValorPedido();
+    }
+
+    public void RemoverItem(PedidoItem pedidoItem)
+    {
+        ValidarPedidoItemInexistente(pedidoItem);
+
+        _pedidoItems.Remove(pedidoItem);
+
         CalcularValorPedido();
     }
 

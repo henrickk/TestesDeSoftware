@@ -13,16 +13,16 @@ public class Roteiro
         Um pedido enquanto não iniciado (processo de pagamento) está no estado de rascunho
         e deve pertencer a um cliente.
 
-        1 - Adicionar Item                
-            1.1 - Ao adicionar um item é necessário calcular o valor total do pedido 
-            1.2 - Se um item já está na lista então deve acrescer a quantidade do item no pedido
-            1.3 - O item deve ter entre 1 e 15 unidades do produto
+      ✅1 - Adicionar Item                
+          ✅1.1 - Ao adicionar um item é necessário calcular o valor total do pedido 
+          ✅1.2 - Se um item já está na lista então deve acrescer a quantidade do item no pedido
+          ✅1.3 - O item deve ter entre 1 e 15 unidades do produto
 
-        2 - Atualizacao de Item
-            2.1 - O item precisa estar na lista para ser atualizado
-            2.2 - Um item pode ser atualizado contendo mais ou menos unidades do que anteriormente                
-            2.3 - Ao atualizar um item é necessário calcular o valor total do pedido 
-            2.4 - Um item deve permanecer entre 1 e 15 unidades do produto
+      ✅2 - Atualizacao de Item
+          ✅2.1 - O item precisa estar na lista para ser atualizado
+          ✅2.2 - Um item pode ser atualizado contendo mais ou menos unidades do que anteriormente                
+          ✅2.3 - Ao atualizar um item é necessário calcular o valor total do pedido 
+          ✅2.4 - Um item deve permanecer entre 1 e 15 unidades do produto
 
         3 - Remoção de Item
             3.1 - O item precisa estar na lista para ser removido
