@@ -1,11 +1,5 @@
-﻿using NerdStore.Core.DomainObjects;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FluentValidation.Results;
+using NerdStore.Core.DomainObjects;
 
 namespace NerdStore.Vendas.Domain;
 public class Pedido
@@ -20,17 +14,59 @@ public class Pedido
     }
 
     public Guid ClienteId { get; private set; }
-
     public decimal ValorTotal { get; private set; }
-
+    public decimal Desconto { get; private set; }
     public PedidoStatus PedidoStatus { get; private set; }
+    public bool VoucherUtilizado { get; private set; }
+    public Voucher Voucher { get; private set; }
 
     private readonly List<PedidoItem> _pedidoItems;
     public IReadOnlyCollection<PedidoItem> PedidoItems => _pedidoItems;
 
+    public ValidationResult AplicarVoucher(Voucher voucher)
+    {
+        var result = voucher.ValidarSeAplicavel();
+        if (!result.IsValid) return result;
+
+        Voucher = voucher;
+        VoucherUtilizado = true;
+
+        CalcularValorTotalDesconto();
+
+        return result;
+    }
+
+    public void CalcularValorTotalDesconto()
+    {
+        if (!VoucherUtilizado) return;
+
+        decimal desconto = 0;
+        var valor = ValorTotal;
+
+        if (Voucher.TipoDescontoVoucher == TipoDescontoVoucher.Valor)
+        {
+            if (Voucher.ValorDesconto.HasValue)
+            {
+                desconto = Voucher.ValorDesconto.Value;
+                valor -= desconto;
+            }
+        }
+        else
+        {
+            if (Voucher.PercentualDesconto.HasValue)
+            {
+                desconto = (ValorTotal * Voucher.PercentualDesconto.Value) / 100;
+                valor -= desconto;
+            }
+        }
+        ValorTotal = valor < 0 ? 0 : valor;
+        Desconto = desconto;
+    }
+
     public void CalcularValorPedido()
     {
         ValorTotal = _pedidoItems.Sum(i => i.CalcularValor());
+        CalcularValorTotalDesconto();
     }
 
     private bool PedidoItemExistente(PedidoItem item)
@@ -112,42 +148,5 @@ public class Pedido
             pedido.TornarRascunho();
             return pedido;
         }
-    }
-}
-
-public enum PedidoStatus
-{
-    Rascunho = 0,
-    Iniciado = 1,
-    Pago = 4,
-    Entregue = 5,
-    Cancelado = 6
-}
-
-public class PedidoItem
-{
-    public Guid ProdutoId { get; private set; }
-    public string ProdutoNome { get; private set; }
-    public int Quantidade { get; private set; }
-    public decimal ValorUnitario { get; private set; }
-
-    public PedidoItem(Guid produtoId, string produtoNome, int quantidade, decimal valorUnitario)
-    {
-        if (quantidade < Pedido.MIN_UNIDADES_ITEM) throw new DomainException($"A quantidade mínima de um item é {Pedido.MIN_UNIDADES_ITEM}.");
-
-        ProdutoId = produtoId;
-        ProdutoNome = produtoNome;
-        Quantidade = quantidade;
-        ValorUnitario = valorUnitario;
-    }
-
-    internal void AdicionarUnidades(int unidades)
-    {
-        Quantidade += unidades;
-    }
-
-    internal decimal CalcularValor()
-    {
-        return Quantidade * ValorUnitario;
     }
 }

@@ -24,15 +24,15 @@ public class Roteiro
           ✅2.3 - Ao atualizar um item é necessário calcular o valor total do pedido 
           ✅2.4 - Um item deve permanecer entre 1 e 15 unidades do produto
 
-        3 - Remoção de Item
-            3.1 - O item precisa estar na lista para ser removido
-            3.2 - Ao remover um item é necessário calcular o valor total do pedido 
+      ✅3 - Remoção de Item
+          ✅3.1 - O item precisa estar na lista para ser removido
+          ✅3.2 - Ao remover um item é necessário calcular o valor total do pedido 
 
         Um voucher possui um código único e o desconto pode ser em percentual ou valor fixo
         Usar uma flag indicando que um pedido teve um voucher de desconto aplicado e o valor do desconto gerado
 
-        4 - Aplicar voucher de desconto
-            4.1 - O voucher só pode ser aplicado se estiver válido, para isto:
+      ✅4 - Aplicar voucher de desconto
+          ✅4.1 - O voucher só pode ser aplicado se estiver válido, para isto:
                 4.1.1 - Deve possuir um código            
                 4.1.2 - A data de validade é superior a data atual
                 4.1.3 - O voucher está ativo
