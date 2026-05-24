@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NerdStore.Core.Data;
 
 namespace NerdStore.Vendas.Domain;
 
-public interface IPedidoRepository
+public interface IPedidoRepository : IRepository<Pedido>
 {
     void Adicionar(Pedido pedido);
 
