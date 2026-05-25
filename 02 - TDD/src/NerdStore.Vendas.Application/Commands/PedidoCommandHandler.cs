@@ -50,7 +50,6 @@ public class PedidoCommandHandler : IRequestHandler<AdicionarItemPedidoCommand, 
                 _pedidoRepository.AdicionarItem(pedidoItem);
             }
 
-            _pedidoRepository.AdicionarItem(pedidoItem);
             _pedidoRepository.Atualizar(pedido);
         }
 
