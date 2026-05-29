@@ -84,7 +84,10 @@ namespace NerdStore.WebApp.MVC
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddHttpContextAccessor();
 
-            services.AddAutoMapper(typeof(DomainToViewModelMappingProfile), typeof(ViewModelToDomainMappingProfile));
+            services.AddAutoMapper(
+                cfg => { },
+                typeof(DomainToViewModelMappingProfile).Assembly,
+                typeof(ViewModelToDomainMappingProfile).Assembly);
 
             services.AddMediatR(typeof(Startup));
 
