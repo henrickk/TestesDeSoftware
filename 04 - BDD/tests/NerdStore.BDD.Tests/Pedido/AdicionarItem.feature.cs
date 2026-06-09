@@ -17,21 +17,21 @@ namespace NerdStore.BDD.Tests.Pedido
     
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Reqnroll", "3.0.0.0")]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class Feature1Feature : object, global::Xunit.IClassFixture<Feature1Feature.FixtureData>, global::Xunit.IAsyncLifetime
+    public partial class AdicionarItemFeature : object, global::Xunit.IClassFixture<AdicionarItemFeature.FixtureData>, global::Xunit.IAsyncLifetime
     {
         
         private global::Reqnroll.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Pedido", "Feature1", "A short summary of the feature", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Pedido", "AdicionarItem", "A short summary of the feature", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
         
         private global::Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
 #line 1 "AdicionarItem.feature"
 #line hidden
         
-        public Feature1Feature(Feature1Feature.FixtureData fixtureData, global::Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public AdicionarItemFeature(AdicionarItemFeature.FixtureData fixtureData, global::Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
         }
@@ -134,7 +134,7 @@ namespace NerdStore.BDD.Tests.Pedido
         }
         
         [global::Xunit.SkippableFactAttribute(DisplayName="[scenario name]")]
-        [global::Xunit.TraitAttribute("FeatureTitle", "Feature1")]
+        [global::Xunit.TraitAttribute("FeatureTitle", "AdicionarItem")]
         [global::Xunit.TraitAttribute("Description", "[scenario name]")]
         [global::Xunit.TraitAttribute("Category", "tag1")]
         public async global::System.Threading.Tasks.Task ScenarioName()
@@ -176,12 +176,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             
             async global::System.Threading.Tasks.Task global::Xunit.IAsyncLifetime.InitializeAsync()
             {
-                await Feature1Feature.FeatureSetupAsync();
+                await AdicionarItemFeature.FeatureSetupAsync();
             }
             
             async global::System.Threading.Tasks.Task global::Xunit.IAsyncLifetime.DisposeAsync()
             {
-                await Feature1Feature.FeatureTearDownAsync();
+                await AdicionarItemFeature.FeatureTearDownAsync();
             }
         }
     }
