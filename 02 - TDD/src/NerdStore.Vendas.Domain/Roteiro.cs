@@ -41,7 +41,7 @@ public class Roteiro
           ✅4.2 - Calcular o desconto conforme tipo do voucher
               ✅4.2.1 - Voucher com desconto percentual
               ✅4.2.2 - Voucher com desconto em valores (reais)
-          ✅4.3 - Quando o valor do desconto ultrapassa o total do pedido o pedido recebe o valor: 0
+          ✅4.3 -o valor do desconto ultrapassa o total do pedido o pedido recebe o valor: 0
           ✅4.4 - Após a aplicação do voucher o desconto deve ser re-calculado após toda modificação da lista
                   de itens do pedido
     */

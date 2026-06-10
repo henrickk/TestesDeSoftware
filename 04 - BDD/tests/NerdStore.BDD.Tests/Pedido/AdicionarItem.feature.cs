@@ -17,21 +17,22 @@ namespace NerdStore.BDD.Tests.Pedido
     
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Reqnroll", "3.0.0.0")]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class AdicionarItemFeature : object, global::Xunit.IClassFixture<AdicionarItemFeature.FixtureData>, global::Xunit.IAsyncLifetime
+    public partial class Pedido_AdicionarItemAoCarrinhoFeature : object, global::Xunit.IClassFixture<Pedido_AdicionarItemAoCarrinhoFeature.FixtureData>, global::Xunit.IAsyncLifetime
     {
         
         private global::Reqnroll.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Pedido", "AdicionarItem", "A short summary of the feature", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Pedido", "Pedido - Adicionar Item ao Carrinho", "\tComo um usuário\r\n\tEu desejo colocar um item no carrinho\r\n\tPara que eu possa comp" +
+                "rá-lo posteriormente", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
         
         private global::Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
 #line 1 "AdicionarItem.feature"
 #line hidden
         
-        public AdicionarItemFeature(AdicionarItemFeature.FixtureData fixtureData, global::Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public Pedido_AdicionarItemAoCarrinhoFeature(Pedido_AdicionarItemAoCarrinhoFeature.FixtureData fixtureData, global::Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
         }
@@ -105,7 +106,7 @@ namespace NerdStore.BDD.Tests.Pedido
         
         private static global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages InitializeCucumberMessages()
         {
-            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("Pedido/AdicionarItem.feature.ndjson", 3);
+            return new global::Reqnroll.Formatters.RuntimeSupport.FeatureLevelCucumberMessages("Pedido/AdicionarItem.feature.ndjson", 6);
         }
         
         async global::System.Threading.Tasks.Task global::Xunit.IAsyncLifetime.InitializeAsync()
@@ -133,17 +134,15 @@ namespace NerdStore.BDD.Tests.Pedido
             await this.TestTearDownAsync();
         }
         
-        [global::Xunit.SkippableFactAttribute(DisplayName="[scenario name]")]
-        [global::Xunit.TraitAttribute("FeatureTitle", "AdicionarItem")]
-        [global::Xunit.TraitAttribute("Description", "[scenario name]")]
-        [global::Xunit.TraitAttribute("Category", "tag1")]
-        public async global::System.Threading.Tasks.Task ScenarioName()
+        [global::Xunit.SkippableFactAttribute(DisplayName="Adicionar item com sucesso a um novo pedido")]
+        [global::Xunit.TraitAttribute("FeatureTitle", "Pedido - Adicionar Item ao Carrinho")]
+        [global::Xunit.TraitAttribute("Description", "Adicionar item com sucesso a um novo pedido")]
+        public async global::System.Threading.Tasks.Task AdicionarItemComSucessoAUmNovoPedido()
         {
-            string[] tagsOfScenario = new string[] {
-                    "tag1"};
+            string[] tagsOfScenario = ((string[])(null));
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
             string pickleIndex = "0";
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("[scenario name]", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Adicionar item com sucesso a um novo pedido", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
 #line 6
@@ -157,13 +156,160 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             {
                 await this.ScenarioStartAsync();
 #line 7
- await testRunner.GivenAsync("[context]", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+await testRunner.GivenAsync("O usuario esteja logado", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 8
- await testRunner.WhenAsync("[action]", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+await testRunner.AndAsync("Que um produto esteja na vitrine", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
 #line 9
- await testRunner.ThenAsync("[outcome]", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+await testRunner.AndAsync("Esteja disponivel no estoque", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 10
+await testRunner.AndAsync("Não tenha nenhum produto adicionado ao carrinho", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 11
+await testRunner.WhenAsync("O usuário adicionar uma unidade ao carrinho", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 12
+await testRunner.ThenAsync("O usuário será redirecionado ao resumo da compra", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 13
+await testRunner.AndAsync("O valor total do pedido será exatamente o valor do item adicionado", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::Xunit.SkippableFactAttribute(DisplayName="Adicionar items acima do limite")]
+        [global::Xunit.TraitAttribute("FeatureTitle", "Pedido - Adicionar Item ao Carrinho")]
+        [global::Xunit.TraitAttribute("Description", "Adicionar items acima do limite")]
+        public async global::System.Threading.Tasks.Task AdicionarItemsAcimaDoLimite()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            string pickleIndex = "1";
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Adicionar items acima do limite", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 15
+this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 16
+await testRunner.GivenAsync("O usuario esteja logado", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 17
+await testRunner.AndAsync("Que um produto esteja na vitrine", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 18
+await testRunner.AndAsync("Esteja disponivel no estoque", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 19
+await testRunner.WhenAsync("O usuário adicionar um item acima da quantidade máxima permitida", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 20
+await testRunner.ThenAsync("Receberá uma mensagem de erro mencionando que foi ultrapassada a quantidade limit" +
+                        "e", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::Xunit.SkippableFactAttribute(DisplayName="Adicionar item já existente no carrinho")]
+        [global::Xunit.TraitAttribute("FeatureTitle", "Pedido - Adicionar Item ao Carrinho")]
+        [global::Xunit.TraitAttribute("Description", "Adicionar item já existente no carrinho")]
+        public async global::System.Threading.Tasks.Task AdicionarItemJaExistenteNoCarrinho()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            string pickleIndex = "2";
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Adicionar item já existente no carrinho", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 22
+this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 23
+await testRunner.GivenAsync("O usuario esteja logado", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 24
+await testRunner.AndAsync("Que um produto esteja na vitrine", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 25
+await testRunner.AndAsync("Esteja disponivel no estoque", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 26
+await testRunner.AndAsync("O mesmo produto já tenha sido adicionado ao carrinho anteriormente", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 27
+await testRunner.WhenAsync("O usuário adicionar uma unidade ao carrinho", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 28
+await testRunner.ThenAsync("O usuário será redirecionado ao resumo da compra", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 29
+await testRunner.AndAsync("A quantidade de itens daquele produto terá sido acrescida em uma unidade a mais", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 30
+await testRunner.AndAsync("O valor total do pedido será a multiplicação da quantidade de itens pelo valor un" +
+                        "itario", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+            }
+            await this.ScenarioCleanupAsync();
+        }
+        
+        [global::Xunit.SkippableFactAttribute(DisplayName="Adicionar item já existente onde soma ultrapassa limite máximo")]
+        [global::Xunit.TraitAttribute("FeatureTitle", "Pedido - Adicionar Item ao Carrinho")]
+        [global::Xunit.TraitAttribute("Description", "Adicionar item já existente onde soma ultrapassa limite máximo")]
+        public async global::System.Threading.Tasks.Task AdicionarItemJaExistenteOndeSomaUltrapassaLimiteMaximo()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
+            string pickleIndex = "3";
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Adicionar item já existente onde soma ultrapassa limite máximo", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            string[] tagsOfRule = ((string[])(null));
+            global::Reqnroll.RuleInfo ruleInfo = null;
+#line 32
+this.ScenarioInitialize(scenarioInfo, ruleInfo);
+#line hidden
+            if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                await testRunner.SkipScenarioAsync();
+            }
+            else
+            {
+                await this.ScenarioStartAsync();
+#line 33
+await testRunner.GivenAsync("O usuario esteja logado", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 34
+await testRunner.AndAsync("Que um produto esteja na vitrine", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 35
+await testRunner.AndAsync("Esteja disponivel no estoque", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 36
+await testRunner.AndAsync("O mesmo produto já tenha sido adicionado ao carrinho anteriormente", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 37
+await testRunner.WhenAsync("O usuário adicionar a quantidade máxima permitida ao carrinho", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+#line 38
+await testRunner.ThenAsync("Receberá uma mensagem de erro mencionando que foi ultrapassada a quantidade limit" +
+                        "e", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -176,12 +322,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             
             async global::System.Threading.Tasks.Task global::Xunit.IAsyncLifetime.InitializeAsync()
             {
-                await AdicionarItemFeature.FeatureSetupAsync();
+                await Pedido_AdicionarItemAoCarrinhoFeature.FeatureSetupAsync();
             }
             
             async global::System.Threading.Tasks.Task global::Xunit.IAsyncLifetime.DisposeAsync()
             {
-                await AdicionarItemFeature.FeatureTearDownAsync();
+                await Pedido_AdicionarItemAoCarrinhoFeature.FeatureTearDownAsync();
             }
         }
     }
