@@ -155,6 +155,32 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
+#line 7
+await testRunner.GivenAsync("Que o visitante está acessando o site da loja", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 8
+await testRunner.WhenAsync("Ele clicar em registrar", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+                global::Reqnroll.Table table1 = new global::Reqnroll.Table(new string[] {
+                            "dados"});
+                table1.AddRow(new string[] {
+                            "E-mail"});
+                table1.AddRow(new string[] {
+                            "Senha"});
+                table1.AddRow(new string[] {
+                            "Confirmação de Senha"});
+#line 9
+await testRunner.AndAsync("Preencher os dados do formulario", ((string)(null)), table1, "And ");
+#line hidden
+#line 14
+await testRunner.AndAsync("Clincar no botão registrar", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 15
+await testRunner.ThenAsync("Ele será redirecionado para a vitrine", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 16
+await testRunner.AndAsync("Uma saudação com seu e-mail será exibida no menu superior", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
             }
             await this.ScenarioCleanupAsync();
         }
@@ -170,7 +196,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Cadastro com senha sem maiusculas", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 8
+#line 18
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -180,6 +206,29 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
+#line 19
+await testRunner.GivenAsync("Que o visitante está acessando o site da loja", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 20
+await testRunner.WhenAsync("Ele clicar em registrar", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+                global::Reqnroll.Table table2 = new global::Reqnroll.Table(new string[] {
+                            "dados"});
+                table2.AddRow(new string[] {
+                            "E-mail"});
+                table2.AddRow(new string[] {
+                            "Senha"});
+                table2.AddRow(new string[] {
+                            "Confirmação de Senha"});
+#line 21
+await testRunner.AndAsync("Preencher os dados do formulario com uma senha sem maiusculas", ((string)(null)), table2, "And ");
+#line hidden
+#line 26
+await testRunner.AndAsync("Clincar no botão registrar", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 27
+await testRunner.ThenAsync("Ele receberá uma mensagem de erro que a senha precisa conter uma letra maiuscula", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
             }
             await this.ScenarioCleanupAsync();
         }
@@ -195,7 +244,7 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Cadastro com senha sem caractere especial", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 10
+#line 29
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -205,6 +254,30 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
+#line 30
+await testRunner.GivenAsync("Que o visitante está acessando o site da loja", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line hidden
+#line 31
+await testRunner.WhenAsync("Ele clicar em registrar", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+                global::Reqnroll.Table table3 = new global::Reqnroll.Table(new string[] {
+                            "dados"});
+                table3.AddRow(new string[] {
+                            "E-mail"});
+                table3.AddRow(new string[] {
+                            "Senha"});
+                table3.AddRow(new string[] {
+                            "Confirmação de Senha"});
+#line 32
+await testRunner.AndAsync("Preencher os dados do formulario com uma senha sem caractere especial", ((string)(null)), table3, "And ");
+#line hidden
+#line 37
+await testRunner.AndAsync("Clincar no botão registrar", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 38
+await testRunner.ThenAsync("Ele receberá uma mensagem de erro que a senha precisa conter um caractere especia" +
+                        "l", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
             }
             await this.ScenarioCleanupAsync();
         }

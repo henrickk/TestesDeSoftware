@@ -17,21 +17,22 @@ namespace NerdStore.BDD.Tests.Usuario
     
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Reqnroll", "3.0.0.0")]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class LoginDeUsuarioFeature : object, global::Xunit.IClassFixture<LoginDeUsuarioFeature.FixtureData>, global::Xunit.IAsyncLifetime
+    public partial class Usuario_LoginFeature : object, global::Xunit.IClassFixture<Usuario_LoginFeature.FixtureData>, global::Xunit.IAsyncLifetime
     {
         
         private global::Reqnroll.ITestRunner testRunner;
         
         private static string[] featureTags = ((string[])(null));
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Usuario", "LoginDeUsuario", "A short summary of the feature", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Usuario", "Usuário - Login", "\tComo um usuario\r\n\tEu desejo realizar o login\r\n\tPara que eu possa acessar as dema" +
+                "is funcionalidades", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
         
         private global::Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
 #line 1 "LoginDeUsuario.feature"
 #line hidden
         
-        public LoginDeUsuarioFeature(LoginDeUsuarioFeature.FixtureData fixtureData, global::Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public Usuario_LoginFeature(Usuario_LoginFeature.FixtureData fixtureData, global::Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
         }
@@ -133,20 +134,18 @@ namespace NerdStore.BDD.Tests.Usuario
             await this.TestTearDownAsync();
         }
         
-        [global::Xunit.SkippableFactAttribute(DisplayName="[scenario name]")]
-        [global::Xunit.TraitAttribute("FeatureTitle", "LoginDeUsuario")]
-        [global::Xunit.TraitAttribute("Description", "[scenario name]")]
-        [global::Xunit.TraitAttribute("Category", "tag1")]
-        public async global::System.Threading.Tasks.Task ScenarioName()
+        [global::Xunit.SkippableFactAttribute(DisplayName="Realizar login com sucesso")]
+        [global::Xunit.TraitAttribute("FeatureTitle", "Usuário - Login")]
+        [global::Xunit.TraitAttribute("Description", "Realizar login com sucesso")]
+        public async global::System.Threading.Tasks.Task RealizarLoginComSucesso()
         {
-            string[] tagsOfScenario = new string[] {
-                    "tag1"};
+            string[] tagsOfScenario = ((string[])(null));
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
             string pickleIndex = "0";
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("[scenario name]", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Realizar login com sucesso", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 6
+#line 7
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -156,14 +155,29 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 7
- await testRunner.GivenAsync("[context]", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
-#line hidden
 #line 8
- await testRunner.WhenAsync("[action]", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+ await testRunner.GivenAsync("Que o visitante está acessando o site da loja", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
 #line hidden
 #line 9
- await testRunner.ThenAsync("[outcome]", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+ await testRunner.WhenAsync("Ele clicar em login", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line hidden
+                global::Reqnroll.Table table4 = new global::Reqnroll.Table(new string[] {
+                            "dados"});
+                table4.AddRow(new string[] {
+                            "E-mail"});
+                table4.AddRow(new string[] {
+                            "Senha"});
+#line 10
+ await testRunner.AndAsync("Preencher os dados do formulário de login", ((string)(null)), table4, "And ");
+#line hidden
+#line 14
+ await testRunner.AndAsync("Clicar no botão login", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+#line hidden
+#line 15
+ await testRunner.ThenAsync("Ele será redirecionado para a vitrine", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+#line hidden
+#line 16
+ await testRunner.AndAsync("Uma saudação com seu e-mail será exibida no menu superior", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -176,12 +190,12 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             
             async global::System.Threading.Tasks.Task global::Xunit.IAsyncLifetime.InitializeAsync()
             {
-                await LoginDeUsuarioFeature.FeatureSetupAsync();
+                await Usuario_LoginFeature.FeatureSetupAsync();
             }
             
             async global::System.Threading.Tasks.Task global::Xunit.IAsyncLifetime.DisposeAsync()
             {
-                await LoginDeUsuarioFeature.FeatureTearDownAsync();
+                await Usuario_LoginFeature.FeatureTearDownAsync();
             }
         }
     }
