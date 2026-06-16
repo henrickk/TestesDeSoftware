@@ -1,4 +1,3 @@
-using System;
 using Reqnroll;
 
 namespace NerdStore.BDD.Tests.Pedido
@@ -135,6 +134,5 @@ namespace NerdStore.BDD.Tests.Pedido
 
             // Assert
         }
-
     }
 }

@@ -24,7 +24,7 @@ namespace NerdStore.BDD.Tests.Usuario
         
         private static string[] featureTags = ((string[])(null));
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Usuario", "Usuário - Login", "\tComo um usuario\r\n\tEu desejo realizar o login\r\n\tPara que eu possa acessar as dema" +
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("pt-BR"), "Usuario", "Usuário - Login", "\tComo um usuario\r\n\tEu desejo realizar o login\r\n\tPara que eu possa acessar as dema" +
                 "is funcionalidades", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
         
         private global::Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
@@ -134,18 +134,18 @@ namespace NerdStore.BDD.Tests.Usuario
             await this.TestTearDownAsync();
         }
         
-        [global::Xunit.SkippableFactAttribute(DisplayName="Realizar login com sucesso")]
+        [global::Xunit.SkippableFactAttribute(DisplayName="Relizar login com sucesso")]
         [global::Xunit.TraitAttribute("FeatureTitle", "Usuário - Login")]
-        [global::Xunit.TraitAttribute("Description", "Realizar login com sucesso")]
-        public async global::System.Threading.Tasks.Task RealizarLoginComSucesso()
+        [global::Xunit.TraitAttribute("Description", "Relizar login com sucesso")]
+        public async global::System.Threading.Tasks.Task RelizarLoginComSucesso()
         {
             string[] tagsOfScenario = ((string[])(null));
             global::System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new global::System.Collections.Specialized.OrderedDictionary();
             string pickleIndex = "0";
-            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Realizar login com sucesso", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
+            global::Reqnroll.ScenarioInfo scenarioInfo = new global::Reqnroll.ScenarioInfo("Relizar login com sucesso", null, tagsOfScenario, argumentsOfScenario, featureTags, pickleIndex);
             string[] tagsOfRule = ((string[])(null));
             global::Reqnroll.RuleInfo ruleInfo = null;
-#line 7
+#line 6
 this.ScenarioInitialize(scenarioInfo, ruleInfo);
 #line hidden
             if ((global::Reqnroll.TagHelper.ContainsIgnoreTag(scenarioInfo.CombinedTags) || global::Reqnroll.TagHelper.ContainsIgnoreTag(featureTags)))
@@ -155,29 +155,29 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             else
             {
                 await this.ScenarioStartAsync();
-#line 8
- await testRunner.GivenAsync("Que o visitante está acessando o site da loja", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+#line 7
+await testRunner.GivenAsync("Que o visitante está acessando o site da loja", ((string)(null)), ((global::Reqnroll.Table)(null)), "Dado ");
 #line hidden
-#line 9
- await testRunner.WhenAsync("Ele clicar em login", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+#line 8
+await testRunner.WhenAsync("Ele clicar em login", ((string)(null)), ((global::Reqnroll.Table)(null)), "Quando ");
 #line hidden
                 global::Reqnroll.Table table4 = new global::Reqnroll.Table(new string[] {
-                            "dados"});
+                            "Dados"});
                 table4.AddRow(new string[] {
                             "E-mail"});
                 table4.AddRow(new string[] {
                             "Senha"});
-#line 10
- await testRunner.AndAsync("Preencher os dados do formulário de login", ((string)(null)), table4, "And ");
+#line 9
+await testRunner.AndAsync("Preencher os dados do formulario de login", ((string)(null)), table4, "E ");
+#line hidden
+#line 13
+await testRunner.AndAsync("Clicar no botão login", ((string)(null)), ((global::Reqnroll.Table)(null)), "E ");
 #line hidden
 #line 14
- await testRunner.AndAsync("Clicar no botão login", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.ThenAsync("Ele será redirecionado para a vitrine", ((string)(null)), ((global::Reqnroll.Table)(null)), "Então ");
 #line hidden
 #line 15
- await testRunner.ThenAsync("Ele será redirecionado para a vitrine", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
-#line hidden
-#line 16
- await testRunner.AndAsync("Uma saudação com seu e-mail será exibida no menu superior", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync("Uma saudação com seu e-mail será exibida no menu superior", ((string)(null)), ((global::Reqnroll.Table)(null)), "E ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

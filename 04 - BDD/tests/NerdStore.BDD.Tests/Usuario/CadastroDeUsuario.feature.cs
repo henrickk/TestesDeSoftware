@@ -24,8 +24,8 @@ namespace NerdStore.BDD.Tests.Usuario
         
         private static string[] featureTags = ((string[])(null));
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Usuario", "Usuário - Cadastro", "\tComo um visitante da loja\r\n\tEu desejo me cadastrar como usuário\r\n\tParaque eu pos" +
-                "sa realizar compras na loja", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("pt-BR"), "Usuario", "Usuário - Cadastro", "\tComo um visitante da loja\r\n\tEu desejo me cadastrar como usuário\r\n\tPara que eu po" +
+                "ssa realizar compras na loja", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
         
         private global::Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
         
@@ -156,30 +156,30 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             {
                 await this.ScenarioStartAsync();
 #line 7
-await testRunner.GivenAsync("Que o visitante está acessando o site da loja", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+await testRunner.GivenAsync("Que o visitante está acessando o site da loja", ((string)(null)), ((global::Reqnroll.Table)(null)), "Dado ");
 #line hidden
 #line 8
-await testRunner.WhenAsync("Ele clicar em registrar", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+await testRunner.WhenAsync("Ele clicar em registrar", ((string)(null)), ((global::Reqnroll.Table)(null)), "Quando ");
 #line hidden
                 global::Reqnroll.Table table1 = new global::Reqnroll.Table(new string[] {
-                            "dados"});
+                            "Dados"});
                 table1.AddRow(new string[] {
                             "E-mail"});
                 table1.AddRow(new string[] {
                             "Senha"});
                 table1.AddRow(new string[] {
-                            "Confirmação de Senha"});
+                            "Confirmação da Senha"});
 #line 9
-await testRunner.AndAsync("Preencher os dados do formulario", ((string)(null)), table1, "And ");
+await testRunner.AndAsync("Preencher os dados do formulario", ((string)(null)), table1, "E ");
 #line hidden
 #line 14
-await testRunner.AndAsync("Clincar no botão registrar", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync("Clicar no botão registrar", ((string)(null)), ((global::Reqnroll.Table)(null)), "E ");
 #line hidden
 #line 15
-await testRunner.ThenAsync("Ele será redirecionado para a vitrine", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+await testRunner.ThenAsync("Ele será redirecionado para a vitrine", ((string)(null)), ((global::Reqnroll.Table)(null)), "Então ");
 #line hidden
 #line 16
-await testRunner.AndAsync("Uma saudação com seu e-mail será exibida no menu superior", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync("Uma saudação com seu e-mail será exibida no menu superior", ((string)(null)), ((global::Reqnroll.Table)(null)), "E ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -207,27 +207,27 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             {
                 await this.ScenarioStartAsync();
 #line 19
-await testRunner.GivenAsync("Que o visitante está acessando o site da loja", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+await testRunner.GivenAsync("Que o visitante está acessando o site da loja", ((string)(null)), ((global::Reqnroll.Table)(null)), "Dado ");
 #line hidden
 #line 20
-await testRunner.WhenAsync("Ele clicar em registrar", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+await testRunner.WhenAsync("Ele clicar em registrar", ((string)(null)), ((global::Reqnroll.Table)(null)), "Quando ");
 #line hidden
                 global::Reqnroll.Table table2 = new global::Reqnroll.Table(new string[] {
-                            "dados"});
+                            "Dados"});
                 table2.AddRow(new string[] {
                             "E-mail"});
                 table2.AddRow(new string[] {
                             "Senha"});
                 table2.AddRow(new string[] {
-                            "Confirmação de Senha"});
+                            "Confirmação de senha"});
 #line 21
-await testRunner.AndAsync("Preencher os dados do formulario com uma senha sem maiusculas", ((string)(null)), table2, "And ");
+await testRunner.AndAsync("Preencher os dados do formulario com uma senha sem maiusculas", ((string)(null)), table2, "E ");
 #line hidden
 #line 26
-await testRunner.AndAsync("Clincar no botão registrar", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync("Clicar no botão registrar", ((string)(null)), ((global::Reqnroll.Table)(null)), "E ");
 #line hidden
 #line 27
-await testRunner.ThenAsync("Ele receberá uma mensagem de erro que a senha precisa conter uma letra maiuscula", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+await testRunner.ThenAsync("Ele receberá uma mensagem de erro que a senha precisa conter uma letra maiuscula", ((string)(null)), ((global::Reqnroll.Table)(null)), "Então ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -255,28 +255,28 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             {
                 await this.ScenarioStartAsync();
 #line 30
-await testRunner.GivenAsync("Que o visitante está acessando o site da loja", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+await testRunner.GivenAsync("Que o visitante está acessando o site da loja", ((string)(null)), ((global::Reqnroll.Table)(null)), "Dado ");
 #line hidden
 #line 31
-await testRunner.WhenAsync("Ele clicar em registrar", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+await testRunner.WhenAsync("Ele clicar em registrar", ((string)(null)), ((global::Reqnroll.Table)(null)), "Quando ");
 #line hidden
                 global::Reqnroll.Table table3 = new global::Reqnroll.Table(new string[] {
-                            "dados"});
+                            "Dados"});
                 table3.AddRow(new string[] {
                             "E-mail"});
                 table3.AddRow(new string[] {
                             "Senha"});
                 table3.AddRow(new string[] {
-                            "Confirmação de Senha"});
+                            "Confirmação de senha"});
 #line 32
-await testRunner.AndAsync("Preencher os dados do formulario com uma senha sem caractere especial", ((string)(null)), table3, "And ");
+await testRunner.AndAsync("Preencher os dados do formulario com uma senha sem caractere especial", ((string)(null)), table3, "E ");
 #line hidden
 #line 37
-await testRunner.AndAsync("Clincar no botão registrar", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync("Clicar no botão registrar", ((string)(null)), ((global::Reqnroll.Table)(null)), "E ");
 #line hidden
 #line 38
 await testRunner.ThenAsync("Ele receberá uma mensagem de erro que a senha precisa conter um caractere especia" +
-                        "l", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+                        "l", ((string)(null)), ((global::Reqnroll.Table)(null)), "Então ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();

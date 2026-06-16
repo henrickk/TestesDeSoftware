@@ -24,7 +24,7 @@ namespace NerdStore.BDD.Tests.Pedido
         
         private static string[] featureTags = ((string[])(null));
         
-        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("en-US"), "Pedido", "Pedido - Adicionar Item ao Carrinho", "\tComo um usuário\r\n\tEu desejo colocar um item no carrinho\r\n\tPara que eu possa comp" +
+        private static global::Reqnroll.FeatureInfo featureInfo = new global::Reqnroll.FeatureInfo(new global::System.Globalization.CultureInfo("pt-BR"), "Pedido", "Pedido - Adicionar Item ao Carrinho", "\tComo um usuário\r\n\tEu desejo colocar um item no carrinho\r\n\tPara que eu possa comp" +
                 "rá-lo posteriormente", global::Reqnroll.ProgrammingLanguage.CSharp, featureTags, InitializeCucumberMessages());
         
         private global::Xunit.Abstractions.ITestOutputHelper _testOutputHelper;
@@ -156,25 +156,25 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             {
                 await this.ScenarioStartAsync();
 #line 7
-await testRunner.GivenAsync("O usuario esteja logado", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+await testRunner.GivenAsync("O usuario esteja logado", ((string)(null)), ((global::Reqnroll.Table)(null)), "Dado ");
 #line hidden
 #line 8
-await testRunner.AndAsync("Que um produto esteja na vitrine", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync("Que um produto esteja na vitrine", ((string)(null)), ((global::Reqnroll.Table)(null)), "E ");
 #line hidden
 #line 9
-await testRunner.AndAsync("Esteja disponivel no estoque", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync("Esteja disponivel no estoque", ((string)(null)), ((global::Reqnroll.Table)(null)), "E ");
 #line hidden
 #line 10
-await testRunner.AndAsync("Não tenha nenhum produto adicionado ao carrinho", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync("Não tenha nenhum produto adicionado ao carrinho", ((string)(null)), ((global::Reqnroll.Table)(null)), "E ");
 #line hidden
 #line 11
-await testRunner.WhenAsync("O usuário adicionar uma unidade ao carrinho", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+await testRunner.WhenAsync("O usuário adicionar uma unidade ao carrinho", ((string)(null)), ((global::Reqnroll.Table)(null)), "Quando ");
 #line hidden
 #line 12
-await testRunner.ThenAsync("O usuário será redirecionado ao resumo da compra", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+await testRunner.ThenAsync("O usuário será redirecionado ao resumo da compra", ((string)(null)), ((global::Reqnroll.Table)(null)), "Então ");
 #line hidden
 #line 13
-await testRunner.AndAsync("O valor total do pedido será exatamente o valor do item adicionado", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync("O valor total do pedido será exatamente o valor do item adicionado", ((string)(null)), ((global::Reqnroll.Table)(null)), "E ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -202,20 +202,20 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             {
                 await this.ScenarioStartAsync();
 #line 16
-await testRunner.GivenAsync("O usuario esteja logado", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+await testRunner.GivenAsync("O usuario esteja logado", ((string)(null)), ((global::Reqnroll.Table)(null)), "Dado ");
 #line hidden
 #line 17
-await testRunner.AndAsync("Que um produto esteja na vitrine", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync("Que um produto esteja na vitrine", ((string)(null)), ((global::Reqnroll.Table)(null)), "E ");
 #line hidden
 #line 18
-await testRunner.AndAsync("Esteja disponivel no estoque", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync("Esteja disponivel no estoque", ((string)(null)), ((global::Reqnroll.Table)(null)), "E ");
 #line hidden
 #line 19
-await testRunner.WhenAsync("O usuário adicionar um item acima da quantidade máxima permitida", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+await testRunner.WhenAsync("O usuário adicionar um item acima da quantidade máxima permitida", ((string)(null)), ((global::Reqnroll.Table)(null)), "Quando ");
 #line hidden
 #line 20
 await testRunner.ThenAsync("Receberá uma mensagem de erro mencionando que foi ultrapassada a quantidade limit" +
-                        "e", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+                        "e", ((string)(null)), ((global::Reqnroll.Table)(null)), "Então ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -243,29 +243,29 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             {
                 await this.ScenarioStartAsync();
 #line 23
-await testRunner.GivenAsync("O usuario esteja logado", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+await testRunner.GivenAsync("O usuario esteja logado", ((string)(null)), ((global::Reqnroll.Table)(null)), "Dado ");
 #line hidden
 #line 24
-await testRunner.AndAsync("Que um produto esteja na vitrine", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync("Que um produto esteja na vitrine", ((string)(null)), ((global::Reqnroll.Table)(null)), "E ");
 #line hidden
 #line 25
-await testRunner.AndAsync("Esteja disponivel no estoque", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync("Esteja disponivel no estoque", ((string)(null)), ((global::Reqnroll.Table)(null)), "E ");
 #line hidden
 #line 26
-await testRunner.AndAsync("O mesmo produto já tenha sido adicionado ao carrinho anteriormente", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync("O mesmo produto já tenha sido adicionado ao carrinho anteriormente", ((string)(null)), ((global::Reqnroll.Table)(null)), "E ");
 #line hidden
 #line 27
-await testRunner.WhenAsync("O usuário adicionar uma unidade ao carrinho", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+await testRunner.WhenAsync("O usuário adicionar uma unidade ao carrinho", ((string)(null)), ((global::Reqnroll.Table)(null)), "Quando ");
 #line hidden
 #line 28
-await testRunner.ThenAsync("O usuário será redirecionado ao resumo da compra", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+await testRunner.ThenAsync("O usuário será redirecionado ao resumo da compra", ((string)(null)), ((global::Reqnroll.Table)(null)), "Então ");
 #line hidden
 #line 29
-await testRunner.AndAsync("A quantidade de itens daquele produto terá sido acrescida em uma unidade a mais", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync("A quantidade de itens daquele produto terá sido acrescida em uma unidade a mais", ((string)(null)), ((global::Reqnroll.Table)(null)), "E ");
 #line hidden
 #line 30
 await testRunner.AndAsync("O valor total do pedido será a multiplicação da quantidade de itens pelo valor un" +
-                        "itario", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+                        "itario", ((string)(null)), ((global::Reqnroll.Table)(null)), "E ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
@@ -293,23 +293,23 @@ this.ScenarioInitialize(scenarioInfo, ruleInfo);
             {
                 await this.ScenarioStartAsync();
 #line 33
-await testRunner.GivenAsync("O usuario esteja logado", ((string)(null)), ((global::Reqnroll.Table)(null)), "Given ");
+await testRunner.GivenAsync("O usuario esteja logado", ((string)(null)), ((global::Reqnroll.Table)(null)), "Dado ");
 #line hidden
 #line 34
-await testRunner.AndAsync("Que um produto esteja na vitrine", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync("Que um produto esteja na vitrine", ((string)(null)), ((global::Reqnroll.Table)(null)), "E ");
 #line hidden
 #line 35
-await testRunner.AndAsync("Esteja disponivel no estoque", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync("Esteja disponivel no estoque", ((string)(null)), ((global::Reqnroll.Table)(null)), "E ");
 #line hidden
 #line 36
-await testRunner.AndAsync("O mesmo produto já tenha sido adicionado ao carrinho anteriormente", ((string)(null)), ((global::Reqnroll.Table)(null)), "And ");
+await testRunner.AndAsync("O mesmo produto já tenha sido adicionado ao carrinho anteriormente", ((string)(null)), ((global::Reqnroll.Table)(null)), "E ");
 #line hidden
 #line 37
-await testRunner.WhenAsync("O usuário adicionar a quantidade máxima permitida ao carrinho", ((string)(null)), ((global::Reqnroll.Table)(null)), "When ");
+await testRunner.WhenAsync("O usuário adicionar a quantidade máxima permitida ao carrinho", ((string)(null)), ((global::Reqnroll.Table)(null)), "Quando ");
 #line hidden
 #line 38
 await testRunner.ThenAsync("Receberá uma mensagem de erro mencionando que foi ultrapassada a quantidade limit" +
-                        "e", ((string)(null)), ((global::Reqnroll.Table)(null)), "Then ");
+                        "e", ((string)(null)), ((global::Reqnroll.Table)(null)), "Então ");
 #line hidden
             }
             await this.ScenarioCleanupAsync();
