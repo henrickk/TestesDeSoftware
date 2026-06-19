@@ -14,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using NerdStore.Catalogo.Application.AutoMapper;
 using NerdStore.Catalogo.Data;
 using NerdStore.Vendas.Data;
+using NerdStore.WebApp.MVC.Models;
 using NerdStore.WebApp.MVC.Setup;
 using Microsoft.OpenApi;
 
@@ -55,6 +56,7 @@ namespace NerdStore.WebApp.MVC
             services.AddMvc(options => options.EnableEndpointRouting = false)
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddHttpContextAccessor();
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
 
             services.AddSwaggerGen(c =>
             {
@@ -109,6 +111,8 @@ namespace NerdStore.WebApp.MVC
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+            app.ApplyPendingMigrations<ApplicationDbContext>();
 
             app.UseAuthentication();
             

@@ -18,6 +18,7 @@ using NerdStore.WebApp.MVC.Models;
 
 namespace NerdStore.WebApp.MVC.Controllers
 {
+    [ApiController]
     [Authorize]
     public class CarrinhoControllerApi : ControllerBase
     {
@@ -31,10 +32,10 @@ namespace NerdStore.WebApp.MVC.Controllers
 
         public CarrinhoControllerApi(INotificationHandler<DomainNotification> notifications,
                                   IProdutoAppService produtoAppService,
-                                  IMediator mediatorHandler, 
+                                  IMediator mediatorHandler,
                                   IPedidoQueries pedidoQueries,
-                                  IHttpContextAccessor httpContextAccessor, 
-                                  SignInManager<IdentityUser> signInManager, 
+                                  IHttpContextAccessor httpContextAccessor,
+                                  SignInManager<IdentityUser> signInManager,
                                   UserManager<IdentityUser> userManager,
                                   IOptions<AppSettings> appSettings) : base(notifications, mediatorHandler, httpContextAccessor)
         {
@@ -62,7 +63,7 @@ namespace NerdStore.WebApp.MVC.Controllers
 
             if (produto.QuantidadeEstoque < item.Quantidade)
             {
-                NotificarErro("ErroValidacao","Produto com estoque insuficiente");
+                NotificarErro("ErroValidacao", "Produto com estoque insuficiente");
             }
 
             var command = new AdicionarItemPedidoCommand(ClienteId, produto.Id, produto.Nome, item.Quantidade, produto.Valor);
@@ -93,7 +94,7 @@ namespace NerdStore.WebApp.MVC.Controllers
 
             var command = new RemoverItemPedidoCommand(ClienteId, id);
             await _mediatorHandler.Send(command);
-            
+
             return Response();
         }
 
@@ -108,7 +109,7 @@ namespace NerdStore.WebApp.MVC.Controllers
                 return Ok(await GerarJwt(login.Email));
             }
 
-            NotificarErro("login","Usuário ou Senha incorretos");
+            NotificarErro("login", "Usuário ou Senha incorretos");
             return Response();
         }
 

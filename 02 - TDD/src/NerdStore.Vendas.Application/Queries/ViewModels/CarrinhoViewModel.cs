@@ -13,6 +13,6 @@ namespace NerdStore.Vendas.Application.Queries.ViewModels
         public string VoucherCodigo { get; set; }
 
         public List<CarrinhoItemViewModel> Items { get; set; } = new List<CarrinhoItemViewModel>();
-        public CarrinhoPagamentoViewModel Pagamento { get; set; }
+        public CarrinhoPagamentoViewModel Pagamento { get; set; } = new CarrinhoPagamentoViewModel();
     }
 }

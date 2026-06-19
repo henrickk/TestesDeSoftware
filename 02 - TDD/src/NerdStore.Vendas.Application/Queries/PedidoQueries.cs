@@ -19,7 +19,7 @@ namespace NerdStore.Vendas.Application.Queries
         public async Task<CarrinhoViewModel> ObterCarrinhoCliente(Guid clienteId)
         {
             var pedido = await _pedidoRepository.ObterPedidoRascunhoPorClienteId(clienteId);
-            if (pedido == null) return null;
+            if (pedido == null) return new CarrinhoViewModel { ClienteId = clienteId };
 
             var carrinho = new CarrinhoViewModel
             {
